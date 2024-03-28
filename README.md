@@ -12,6 +12,7 @@ https://www.figma.com/file/Lnv6GdopZayd36rxf2uBrF/Todo-App?type=design&node-id=1
 | GET    | /api/todos/{id}            | Mendapatkan detail todo berdasarkan ID.      |
 | POST   | /api/todos                 | Membuat todo baru.                           |
 | PUT    | /api/todos/{id}            | Mengupdate data todo.                        |
+| DELETE | /api/todos/{id}            | Menghapus todo berdasarkan ID.               |
 
 ## Test dengan Postman
 
@@ -34,3 +35,7 @@ Membuat data todo baru
 PUT `http://localhost:8080/api/todos/3`<br/>
 Mengupdate data todo berdasarkan ID
 ![create-a-todo](dokumentasi/update-todo.png)
+
+DELETE `http://localhost:8080/api/todos/3`<br/>
+Menghapus data todo berdasarkan ID
+![create-a-todo](dokumentasi/delete-todo.png)

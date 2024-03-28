@@ -13,6 +13,7 @@ $routes->group('api', function ($routes) {
 	$routes->get('todos/(:num)', 'Api\Todos::show/$1');
 	$routes->post('todos', 'Api\Todos::create');
 	$routes->put('todos/(:num)', 'Api\Todos::update/$1');
+	$routes->delete('todos/(:num)', 'Api\Todos::delete/$1');
 });
 
 // Membuat database

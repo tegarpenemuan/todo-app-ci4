@@ -126,6 +126,15 @@ class Todos extends ResourceController
      */
     public function delete($id = null)
     {
-        //
+        $model = new TodosModel();
+        $todo = $model->find($id);
+
+        if ($todo === null) {
+            return $this->respond(['status' => false, 'message' => 'Todo not found', 'data' => null]);
+        }
+
+        $model->delete($id);
+
+        return $this->respondDeleted(['status' => true, 'message' => 'Todo deleted successfully', 'data' => null]);
     }
 }
