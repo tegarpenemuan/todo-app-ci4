@@ -40,7 +40,14 @@ class Todos extends ResourceController
      */
     public function show($id = null)
     {
-        //
+        $model = new TodosModel();
+        $todo = $model->find($id);
+
+        if ($todo === null) {
+            return $this->respond(['status' => false, 'message' => 'Todo not found', 'data' => null]);
+        }
+
+        return $this->respond(['status' => true, 'message' => 'Todo retrieved successfully', 'data' => $todo]);
     }
 
     /**
