@@ -11,6 +11,7 @@ https://www.figma.com/file/Lnv6GdopZayd36rxf2uBrF/Todo-App?type=design&node-id=1
 | GET    | /api/todos/status/{status} | Mendapatkan daftar todos berdasarkan status. |
 | GET    | /api/todos/{id}            | Mendapatkan detail todo berdasarkan ID.      |
 | POST   | /api/todos                 | Membuat todo baru.                           |
+| PUT    | /api/todos/{id}            | Mengupdate data todo.                        |
 
 ## Test dengan Postman
 
@@ -23,9 +24,13 @@ Menampilkan data todo berdasarkan status 0 = belum selesai, 1 = sudah selesai
 ![list-todos-with-status](dokumentasi/list-todos-with-status.png)
 
 GET `http://localhost:8080/api/todos/2`<br/>
-Gunakan id untuk menampilkan data detail
+Menampilkan data detail todo berdasarkan ID
 ![view-todo-by-id](dokumentasi/view-a-todo.png)
 
 POST `http://localhost:8080/api/todos`<br/>
-Gunakan id untuk menampilkan data detail
-![create-a-todo](dokumentasi/view-a-todo.png)
+Membuat data todo baru
+![create-a-todo](dokumentasi/create-todo.png)
+
+PUT `http://localhost:8080/api/todos/3`<br/>
+Mengupdate data todo berdasarkan ID
+![create-a-todo](dokumentasi/update-todo.png)

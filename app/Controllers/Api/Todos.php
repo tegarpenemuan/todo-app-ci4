@@ -100,7 +100,21 @@ class Todos extends ResourceController
      */
     public function update($id = null)
     {
-        //
+        $model = new TodosModel();
+        $todo = $model->find($id);
+
+        if ($todo === null) {
+            return $this->respond(['status' => false, 'message' => 'Todo not found', 'data' => null]);
+        }
+
+        $data = [
+            'todo_title' => $this->request->getVar('title'),
+            'todo_description' => $this->request->getVar('description'),
+        ];
+
+        $model->update($id, $data);
+
+        return $this->respond(['status' => true, 'message' => 'Todo updated successfully', 'data' => $data]);
     }
 
     /**
