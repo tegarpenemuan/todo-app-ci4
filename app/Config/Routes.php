@@ -7,6 +7,11 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 
+$routes->group('api', function ($routes) {
+    $routes->get('todos', 'Api\Todos::index');
+    $routes->get('todos/status/(:num)', 'Api\Todos::index/$1'); 
+});
+
 // Membuat database
 $routes->get('create-db', function() {
 	$forge = \Config\Database::forge();

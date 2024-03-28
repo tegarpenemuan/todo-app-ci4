@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class TodosModel extends Model
 {
     protected $table            = 'todos';
-    protected $primaryKey       = 'todos_id';
+    protected $primaryKey       = 'todo_id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
