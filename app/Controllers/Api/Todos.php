@@ -67,7 +67,16 @@ class Todos extends ResourceController
      */
     public function create()
     {
-        //
+        $model = new TodosModel();
+
+        $data = [
+            'todo_title' => $this->request->getVar('title'),
+            'todo_description' => $this->request->getVar('description'),
+        ];
+
+        $model->insert($data);
+
+        return $this->respondCreated(['status' => true, 'message' => 'Todo created successfully', 'data' => $data]);
     }
 
     /**

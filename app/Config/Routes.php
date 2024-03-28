@@ -11,6 +11,7 @@ $routes->group('api', function ($routes) {
     $routes->get('todos', 'Api\Todos::index');
     $routes->get('todos/status/(:num)', 'Api\Todos::index/$1'); 
 	$routes->get('todos/(:num)', 'Api\Todos::show/$1');
+	$routes->post('todos', 'Api\Todos::create');
 });
 
 // Membuat database
