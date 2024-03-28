@@ -117,6 +117,23 @@ class Todos extends ResourceController
         return $this->respond(['status' => true, 'message' => 'Todo updated successfully', 'data' => $data]);
     }
 
+    public function complete($id)
+    {
+        $model = new TodosModel();
+        $todo = $model->find($id);
+
+        if ($todo === null) {
+            return $this->respond(['status' => false, 'message' => 'Todo not found', 'data' => null]);
+        }
+
+        $completed = $this->request->getVar('completed');
+
+        $data = ['todo_status' => $completed];
+        $model->update($id, $data);
+
+        return $this->respond(['status' => true, 'message' => 'Todo updated successfully', 'data' => $data]);
+    }
+
     /**
      * Delete the designated resource object from the model.
      *

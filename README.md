@@ -5,14 +5,15 @@ https://www.figma.com/file/Lnv6GdopZayd36rxf2uBrF/Todo-App?type=design&node-id=1
 
 ## API Endpoints
 
-| Method | Endpoint                   | Deskripsi                                    |
-| ------ | -------------------------- | -------------------------------------------- |
-| GET    | /api/todos                 | Mendapatkan daftar semua todos.              |
-| GET    | /api/todos/status/{status} | Mendapatkan daftar todos berdasarkan status. |
-| GET    | /api/todos/{id}            | Mendapatkan detail todo berdasarkan ID.      |
-| POST   | /api/todos                 | Membuat todo baru.                           |
-| PUT    | /api/todos/{id}            | Mengupdate data todo.                        |
-| DELETE | /api/todos/{id}            | Menghapus todo berdasarkan ID.               |
+| Method | Endpoint                   | Deskripsi                                     |
+| ------ | -------------------------- | --------------------------------------------- |
+| GET    | /api/todos                 | Mendapatkan daftar semua todos.               |
+| GET    | /api/todos/status/{status} | Mendapatkan daftar todos berdasarkan status.  |
+| GET    | /api/todos/{id}            | Mendapatkan detail todo berdasarkan ID.       |
+| POST   | /api/todos                 | Membuat todo baru.                            |
+| PUT    | /api/todos/{id}            | Mengupdate data todo.                         |
+| PATCH  | /api/todos/complete/{id}   | Menandai todo sebagai selesai berdasarkan ID. |
+| DELETE | /api/todos/{id}            | Menghapus todo berdasarkan ID.                |
 
 ## Test dengan Postman
 
@@ -35,6 +36,10 @@ Membuat data todo baru
 PUT `http://localhost:8080/api/todos/3`<br/>
 Mengupdate data todo berdasarkan ID
 ![create-a-todo](dokumentasi/update-todo.png)
+
+PATCH `http://localhost:8080/api/todos/complete/2`<br/>
+Mengupdate status todo berdasarkan ID dan nilai 1 = selesai, 0 = belum selesai
+![create-a-todo](dokumentasi/complete-todo.png)
 
 DELETE `http://localhost:8080/api/todos/3`<br/>
 Menghapus data todo berdasarkan ID
